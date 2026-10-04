@@ -1,10 +1,11 @@
 :root {
-  --ink: #2a241c;
-  --muted: #5c5348;
-  --paper: #f6f1e8;
-  --band: #efe6d6;
-  --line: #ddd2c0;
-  --link: #6b3f2a;
+  --ink: #f4ecdf;
+  --muted: #cbbfa8;
+  --paper: #12100e;
+  --band: rgba(212, 175, 110, 0.08);
+  --line: rgba(212, 175, 110, 0.35);
+  --gold: #d4af6e;
+  --link: #f0d7a2;
 }
 
 * { box-sizing: border-box; }
@@ -13,51 +14,81 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--paper);
-  font: 18px/1.55 Georgia, "Iowan Old Style", Palatino, serif;
+  font: 18px/1.6 "Outfit", "Avenir Next", system-ui, sans-serif;
+  font-weight: 300;
+}
+
+.geometry {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='156' viewBox='0 0 180 156'><g fill='none' stroke='%23d4af6e' stroke-width='0.7' opacity='0.55'><circle cx='90' cy='78' r='30'/><circle cx='90' cy='48' r='30'/><circle cx='116' cy='63' r='30'/><circle cx='116' cy='93' r='30'/><circle cx='90' cy='108' r='30'/><circle cx='64' cy='93' r='30'/><circle cx='64' cy='63' r='30'/></g></svg>");
+  background-size: 180px 156px;
+  opacity: 0.18;
 }
 
 .wrap {
-  max-width: 40rem;
+  position: relative;
+  max-width: 42rem;
   margin: 0 auto;
-  padding: 2.5rem 1.25rem;
+  padding: 2.6rem 1.35rem;
 }
 
 .band {
   background: var(--band);
   max-width: none;
-  padding-left: calc(50vw - 20rem);
-  padding-right: calc(50vw - 20rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-left: calc(50vw - 21rem);
+  padding-right: calc(50vw - 21rem);
 }
 
-header { padding-top: 3.5rem; }
+header { padding-top: 3.2rem; text-align: center; }
+
+.mark {
+  width: 7.5rem;
+  height: 7.5rem;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
 
 .eyebrow {
-  margin: 0 0 0.4rem;
-  letter-spacing: 0.04em;
+  margin: 0 0 0.35rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font: 0.78rem/1.4 system-ui, sans-serif;
-  color: var(--muted);
+  font: 0.72rem/1.4 "Outfit", system-ui, sans-serif;
+  font-weight: 500;
+  color: var(--gold);
+}
+
+h1, h2, h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 h1 {
-  margin: 0 0 0.6rem;
-  font-size: 2.6rem;
-  font-weight: normal;
-  letter-spacing: -0.02em;
+  margin: 0 0 0.7rem;
+  font-size: 4.2rem;
+  line-height: 0.95;
 }
 
-.lede { font-size: 1.2rem; margin: 0; }
+.lede {
+  font-size: 1.15rem;
+  margin: 0 auto;
+  max-width: 36rem;
+  color: var(--muted);
+}
 
 h2 {
-  margin: 0 0 0.8rem;
-  font-size: 1.55rem;
-  font-weight: normal;
+  margin: 0 0 0.85rem;
+  font-size: 2.15rem;
 }
 
 h3 {
-  margin: 0 0 0.25rem;
-  font-size: 1.15rem;
-  font-weight: normal;
+  margin: 0 0 0.2rem;
+  font-size: 1.55rem;
+  color: var(--link);
 }
 
 p { margin: 0 0 0.9rem; }
@@ -67,34 +98,51 @@ ul.help, ol { margin: 0; padding: 0; }
 ul.help { list-style: none; }
 
 ul.help li {
-  padding: 1rem 0;
+  padding: 1.05rem 0 1.05rem 1.4rem;
   border-top: 1px solid var(--line);
+  position: relative;
 }
 
 ul.help li:last-child { border-bottom: 1px solid var(--line); }
 
-ol { padding-left: 1.2rem; }
-
-ol li { margin: 0.4rem 0; }
-
-a {
-  color: var(--link);
+ul.help li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.45rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  box-shadow: 0.28rem 0 0 -0.5px var(--gold);
 }
 
+ol { padding-left: 1.2rem; }
+
+ol li { margin: 0.45rem 0; }
+
+a { color: var(--link); }
+
 .mail {
-  font-size: 1.15rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.7rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
 }
 
 footer {
   color: var(--muted);
-  font: 0.9rem/1.4 system-ui, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-align: center;
   padding-top: 0;
 }
 
 @media (max-width: 720px) {
   .band {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: 1.35rem;
+    padding-right: 1.35rem;
   }
-  h1 { font-size: 2.1rem; }
+  h1 { font-size: 3.1rem; }
 }
