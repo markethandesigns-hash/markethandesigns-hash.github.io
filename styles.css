@@ -45,6 +45,9 @@ body {
 
 header { padding-top: 3.2rem; text-align: center; }
 
+.welcome { text-align: center; }
+.welcome p { color: var(--muted); }
+
 .mark {
   width: 7.5rem;
   height: 7.5rem;
