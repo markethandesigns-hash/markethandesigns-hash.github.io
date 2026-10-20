@@ -149,3 +149,44 @@ footer {
   }
   h1 { font-size: 3.1rem; }
 }
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.portrait {
+  flex: 0 0 9.5rem;
+  width: 9.5rem;
+  height: 9.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  box-shadow: 0 0 0 6px rgba(212, 175, 110, 0.08), 0 0 28px rgba(212, 175, 110, 0.18);
+  background: radial-gradient(circle, rgba(212, 175, 110, 0.12), transparent 70%);
+  color: var(--gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portrait svg { width: 5.2rem; height: 5.2rem; opacity: 0.8; }
+
+.portrait span {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+.portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+.about-text p:last-child { color: var(--muted); margin-bottom: 0; }
+
+@media (max-width: 720px) {
+  .about { flex-direction: column; text-align: center; gap: 1.2rem; }
+}
