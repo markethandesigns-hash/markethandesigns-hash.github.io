@@ -190,3 +190,50 @@ footer {
 @media (max-width: 720px) {
   .about { flex-direction: column; text-align: center; gap: 1.2rem; }
 }
+
+.choices-intro { color: var(--muted); text-align: center; max-width: 34rem; margin: 0 auto 1.6rem; }
+.choices-wrap h2 { text-align: center; }
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1rem;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem 1.2rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(212, 175, 110, 0.05);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.choice:hover, .choice:focus-visible {
+  border-color: var(--gold);
+  background: rgba(212, 175, 110, 0.11);
+  transform: translateY(-2px);
+}
+
+.choice .tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.choice p { color: var(--muted); font-size: 0.98rem; flex: 1; }
+
+.choice .pick {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--link);
+  border-top: 1px solid var(--line);
+  padding-top: 0.6rem;
+}
+
+.choices-wrap { max-width: 58rem; }
